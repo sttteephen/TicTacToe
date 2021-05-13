@@ -43,7 +43,7 @@ class Display:
         self.screen = pygame.display.set_mode(screenWidth)
         pygame.display.set_caption('Tic Tac Toe')
 
-        self.dialougeBox = Rect((185,480),(150,50))
+        self.dialougeBox = Rect((0,480),(500,80))
         self.font = pygame.font.SysFont('arial', 50)
 
         # create square objects
@@ -88,7 +88,7 @@ class Display:
     def updateDialouge(self, message, colour):
         self.screen.fill(screenColour, self.dialougeBox)
         message_surf = self.font.render(message, True, colour, None)
-        self.screen.blit(message_surf, self.dialougeBox)
+        self.screen.blit(message_surf, (185,480))
 
     def drawCircle(self, square):
         square.drawCircle(self.screen)
